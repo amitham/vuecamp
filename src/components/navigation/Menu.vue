@@ -1,12 +1,15 @@
 <template>
   <div class="col-sm-3 sidenav">
     <h4>Vue Features</h4>
-    <ul class="nav nav-pills nav-stacked">
+    <ul id="main-nav" class="nav nav-pills nav-stacked">
       <li class="active">
         <router-link to="/">Getting Started</router-link>
       </li>
       <li>
         <router-link to="/interact">Interact with the DOM</router-link>
+      </li>
+      <li>
+        <router-link to="/routing">Routing</router-link>
       </li>
     </ul>
   </div>
@@ -17,9 +20,7 @@ export default {};
 </script>
 
 <style>
-.nav {
+#main-nav {
   display: block !important;
 }
 </style>
-
-
