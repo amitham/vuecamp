@@ -3,7 +3,8 @@ import Router from 'vue-router'
 import Start from './components/features/start/Start.vue'
 import DOMInteract from './components/features/domInteract/DOMInteract.vue'
 import Routing from './components/features/routing/Routing.vue'
-import UserStart from './components/features/routing/user/userStart.vue'
+import User from './components/features/routing/user/user.vue';
+import AllUsers from './components/features/routing/user/allUsers.vue'
 import UserDetail from './components/features/routing/user/userDetail.vue'
 import UserEdit from './components/features/routing/user/userEdit.vue'
 
@@ -18,9 +19,11 @@ export default new Router({
     {
       path: '/routing', name: 'routing', component: Routing, children: [
         {
-          path: ':user', name: 'user', component: UserStart, children: [
-            { path: ':detail', component: UserDetail },
-            { path: ':edit', component: UserEdit }
+          path: ':user', component: User, children: [
+            { path: '', component: AllUsers },
+            { path: 'all', component: AllUsers },
+            { path: ':id/detail', component: UserDetail },
+            { path: ':id/edit', component: UserEdit }
           ]
         }
       ]

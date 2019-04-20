@@ -1,3 +1,5 @@
 <template>
-  <p>This is user page</p>
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
