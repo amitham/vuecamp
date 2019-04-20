@@ -17,7 +17,7 @@
         in the root vue instanse.
       </strong>
     </p>
-    <p>There are few things that we need to know when we are working with routing in vue</p>
+    <p>There are few things that we need to know when we are working with routing in vuejs (front-end development)</p>
     <ul>
       <li>What is necessary for router to work</li>
       <ol>
@@ -39,7 +39,79 @@
       <p class="mg-25">Tag name: router-link, attribute name: to ex.  to="/routing/user/3/edit"</p>
 
       <li>How to use router params</li>
-      <p class="mg-25">Can get router params by using following line fo code. "$route.params.id" id is the param name that we define in the route object</p>
+      <p class="mg-25">Can get router params by using following line fo code. "$route.params.id" id is the param name that we define in
+         the route object</p>
+
+      <li>What is eager loading and lazy loading</li>
+      <ul>
+        <li>Eager loading: Load everything all the time</li>
+        <li>Lazy loading: Only load part of the application when it is necessary</li>
+        <li>When we use import statment in a file, those imported file's content will be included in the bundle.js
+          no matter whether we use it or not</li>
+        <li>Firt remove the import statments, then before we add router component, create a const variable to
+        load component when it is require</li>
+      </ul>
+      <div class="pre code">
+        const User = resolve = {
+          require.ensure(['./../routing/user/user.vue'], () => {
+            resolve(require('./../routing/user/user'))
+          }, 'user') <span class="comment"><b>// can add a group name like "user" to group related routes</b></span>
+        }
+
+        * did the same for below example
+      </div>
+
+      <li>Protecting routes with guards</li>
+      <ul>
+        <li>Globally:</li>
+        <div class="pre code">
+          import Vue from 'vue'
+          import App from './App.vue'
+          import router from './router'
+          import store from './store'
+
+          Vue.config.productionTip = false
+
+          router.beforeEach((to, from, next) => {
+            console.log('this will execute all the time');
+            next(); <span class="comment"><b>// this is very important, if we didn't execute next() then routing will not continue</b></span>
+          })
+
+          new Vue({
+            router,
+            store,
+            render: h => h(App)
+          }).$mount('#app')
+      </div>
+
+      <li>Inside a router:</li>
+      <div class="pre code">
+        export default new Router({
+        mode: 'history',
+        base: process.env.BASE_URL,
+        routes: [
+          { path: '/', name: 'start', component: Start },
+          { path: '/interact', name: 'DOMinteract', component: DOMInteract },
+          {
+            path: '/routing', name: 'routing', component: Routing, children: [
+              {
+                path: ':user', component: User, children: [
+                  { path: '', component: AllUsers },
+                  <span class="comment"><b>// same as the global. make sure add next()</b></span>
+                  { path: 'all', component: AllUsers, beforeEnter: (to, from, next) => {
+                    console.log('this only execute when "user/all" routing execute')
+                    next()
+                  }},
+                  { path: ':id/detail', component: UserDetail },
+                  { path: ':id/edit', component: UserEdit }
+                ]
+              }
+            ]
+          },
+        ]
+      })
+      </div>
+      </ul>
     </ul>
 
     <p>Example:</p>
@@ -53,10 +125,17 @@
       import Start from './components/features/start/Start.vue'
       import DOMInteract from './components/features/domInteract/DOMInteract.vue'
       import Routing from './components/features/routing/Routing.vue'
-      import User from './components/features/routing/user/user.vue';
+      // import User from './components/features/routing/user/user.vue';
       import AllUsers from './components/features/routing/user/allUsers.vue'
       import UserDetail from './components/features/routing/user/userDetail.vue'
       import UserEdit from './components/features/routing/user/userEdit.vue'
+
+      <span class="comment"><b>// using lazy loading</b></span>
+      const User = resolve = {
+          require.ensure(['./../routing/user/user.vue'], () => {
+            resolve(require('./../routing/user/user'))
+          }, 'user') <span class="comment"><b>// can add a group name like "user" to group related routes</b></span>
+        }
 
       Vue.use(Router) <span class="comment"><b>// register vue router with the application</b></span>
 

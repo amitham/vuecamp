@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Start from './components/features/start/Start.vue'
-import DOMInteract from './components/features/domInteract/DOMInteract.vue'
+import Directive from './components/features/directive/Directive.vue'
 import Routing from './components/features/routing/Routing.vue'
 import User from './components/features/routing/user/user.vue';
 import AllUsers from './components/features/routing/user/allUsers.vue'
@@ -15,13 +15,16 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     { path: '/', name: 'start', component: Start },
-    { path: '/interact', name: 'DOMinteract', component: DOMInteract },
+    { path: '/directive', name: 'directive', component: Directive },
     {
       path: '/routing', name: 'routing', component: Routing, children: [
         {
           path: ':user', component: User, children: [
             { path: '', component: AllUsers },
-            { path: 'all', component: AllUsers },
+            { path: 'all', component: AllUsers, beforeEnter: (to, from, next) => {
+              console.log('this only execute when "user/all" routing execute')
+              next()
+            }},
             { path: ':id/detail', component: UserDetail },
             { path: ':id/edit', component: UserEdit }
           ]

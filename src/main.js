@@ -5,6 +5,11 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+router.beforeEach((to, from, next) => {
+  console.log('this will execute all the time');
+  next(); // this is very important, if we didn't execute next() then routing will not continue
+})
+
 new Vue({
   router,
   store,

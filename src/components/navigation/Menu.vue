@@ -6,7 +6,7 @@
         <router-link to="/">Getting Started</router-link>
       </li>
       <li>
-        <router-link to="/interact">Interact with the DOM</router-link>
+        <router-link to="/directive">Directives</router-link>
       </li>
       <li>
         <router-link to="/routing">Routing</router-link>
