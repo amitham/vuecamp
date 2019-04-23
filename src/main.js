@@ -3,6 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+// custome directives
+import highlight from './directives/highlight';
+
+
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {
