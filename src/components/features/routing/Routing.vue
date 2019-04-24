@@ -17,6 +17,17 @@
         in the root vue instanse.
       </strong>
     </p>
+
+    <br><hr>
+    <ul id="nav" class="nav nav-pills">
+      <router-link tag="li" to="/routing/user" class="nav-link" style="cursor: pointer">
+        <button type="button" class="btn btn-primary">Demo</button>
+      </router-link>
+    </ul>
+
+    <router-view></router-view>
+    <br><hr>
+
     <p>There are few things that we need to know when we are working with routing in vuejs (front-end development)</p>
     <ul>
       <li>What is necessary for router to work</li>
@@ -192,14 +203,6 @@
       };
     </div>
 
-    <br>
-    <ul id="nav" class="nav nav-pills">
-      <router-link tag="li" to="/routing/user" class="nav-link" style="cursor: pointer">
-        <button type="button" class="btn btn-primary">Demo</button>
-      </router-link>
-    </ul>
-
-    <router-view></router-view>
     <br>
   </div>
 </template>

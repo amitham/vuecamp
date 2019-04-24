@@ -33,8 +33,6 @@ const highlight = Vue.directive('highlight', {
         }
       }, delay);
     }
-
-
   }
 })
 

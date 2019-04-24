@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <p>Edit user has loaded ID: {{$route.params.id}}</p>
-    <br>
+    <!-- <br> -->
     <a href="javascript:void(0)" @click="goback">Back</a>
   </div>
 </template>
