@@ -250,42 +250,4 @@ export default {
     padding: 15px;
     background: #e6f7ff;
   }
-
-  .pre {
-    font-family: "Roboto Mono", Monaco, courier, monospace;
-    font-size: 0.8em;
-    background-color: #f8f8f8;
-    -webkit-font-smoothing: initial;
-    -moz-osx-font-smoothing: initial;
-    border-radius: 2px;
-    position: relative;
-    display: block;
-    font-family: monospace;
-    white-space: pre;
-    margin: 1em 0px;
-  }
-
-  .code {
-    overflow-x: auto;
-    color: #525252;
-    white-space: pre;
-    padding: 1.2em 1.4em;
-    line-height: 1.5em;
-    font-size: 1em;
-    display: block;
-    margin: 0 2px;
-    border-radius: 2px;
-  }
-
-  .comment {
-    color: green;
-  }
-
-  .right {
-    float: right;
-  }
-
-  .mg-25 {
-    margin-left: 25px;
-  }
 </style>
