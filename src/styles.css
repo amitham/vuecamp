@@ -1,0 +1,50 @@
+.app-hr {
+    border: 0;
+    height: 0;
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.app-content {
+    background: #fbfbfb;
+}
+
+.preview-con {
+    margin-top: -40px;
+}
+
+.hang-right {
+    position: relative;
+    z-index: 1000;
+    padding: 8px 15px;
+    right: 0;
+    top: 50px;
+    width: 100%;
+    text-align: right;
+}
+
+.hang-right > span {
+    background: #fff;
+    font-weight: 500;
+    color: #272822;
+    padding: 2px 10px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #868686;
+}
+
+.pl-15 {
+    padding-left: 15px;
+}
+
+.pl-18 {
+    padding-left: 18px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.mt-25 {
+    margin-top: 25px;
+}

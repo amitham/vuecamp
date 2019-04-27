@@ -9,10 +9,9 @@
 <script>
 export default {
   methods: {
-    goback() {
-      this.$router.push({ path: "/routing/user" });
+    goback () {
+      this.$router.push({ path: '/routing/user' });
     }
   }
 };
 </script>
-
