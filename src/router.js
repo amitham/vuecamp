@@ -6,6 +6,7 @@ import User from './components/features/routing/user/User';
 import AllUsers from './components/features/routing/user/All-Users';
 import UserDetail from './components/features/routing/user/User-Detail';
 import UserEdit from './components/features/routing/user/User-Edit';
+import Filters from './views/filters/Filters';
 
 export default new Router({
   mode: 'history',
@@ -34,6 +35,7 @@ export default new Router({
           ]
         }
       ]
-    }
+    },
+    { path: '/filters', name: 'filters', component: Filters },
   ]
 });
