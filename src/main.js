@@ -5,8 +5,10 @@ import router from './router';
 import store from './store';
 // global styles
 import './styles.css';
+import 'prismjs/themes/prism-okaidia.css';
 // plugin modules
-import { Layout, Icon, Menu } from 'ant-design-vue';
+import 'prismjs';
+import { Button, Icon, Layout, Menu } from 'ant-design-vue';
 // custom directives
 import './directives/highlight';
 
@@ -22,6 +24,7 @@ Vue.use(Router);
 Vue.use(Layout);
 Vue.use(Menu);
 Vue.use(Icon);
+Vue.use(Button);
 
 // Vue App Instance
 new Vue({

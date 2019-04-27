@@ -115,8 +115,6 @@
 </template>
 
 <script>
-import 'prismjs';
-import 'prismjs/themes/prism-okaidia.css';
 import PrismEditor from 'vue-prism-editor';
 
 export default {
@@ -173,32 +171,5 @@ export default {
   .list {
     list-style: none;
     padding-left: 0;
-  }
-
-  .comment {
-    color: green;
-  }
-
-  .preview-con {
-    margin-top: -40px;
-  }
-
-  .hang-right {
-    position: relative;
-    z-index: 1000;
-    padding: 8px 15px;
-    right: 0;
-    top: 50px;
-    width: 100%;
-    text-align: right;
-  }
-
-  .hang-right > span {
-    background: #fff;
-    font-weight: 500;
-    color: #272822;
-    padding: 2px 10px;
-    border-radius: 30px;
-    box-shadow: 0 0 10px #868686;
   }
 </style>
