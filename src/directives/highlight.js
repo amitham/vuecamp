@@ -1,11 +1,10 @@
-import Vue from 'vue'
+import Vue from 'vue';
 
-const highlight = Vue.directive('highlight', {
-  bind(el, binding, vnode) {
-
+Vue.directive('highlight', {
+  bind (el, binding, vnode) {
     var delay = 0;
     if (binding.modifiers['delayed']) {
-      delay = 1000
+      delay = 1000;
     }
 
     if (binding.modifiers['blink']) {
@@ -15,18 +14,18 @@ const highlight = Vue.directive('highlight', {
 
       setTimeout(() => {
         setInterval(() => {
-          currentColor = currentColor == secondColor ? mainColor : secondColor;
-          if (binding.arg == 'background') {
+          currentColor = currentColor === secondColor ? mainColor : secondColor;
+          if (binding.arg === 'background') {
             el.style.backgroundColor = currentColor;
             el.style.color = 'white';
           } else {
             el.style.color = currentColor;
           }
-        }, binding.value.delay)
-      }, delay)
+        }, binding.value.delay);
+      }, delay);
     } else {
       setTimeout(() => {
-        if (binding.arg == 'background') {
+        if (binding.arg === 'background') {
           el.style.backgroundColor = binding.value.mainColor;
         } else {
           el.style.color = binding.value.mainColor;
@@ -34,6 +33,4 @@ const highlight = Vue.directive('highlight', {
       }, delay);
     }
   }
-})
-
-export default highlight;
+});
