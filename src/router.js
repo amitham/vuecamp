@@ -42,7 +42,7 @@ const router = new Router({
         }
       ]
     },
-    { path: '/filters', name: 'filters', component: Filters },
+    { path: '/filters', name: 'filters', component: Filters }
   ]
 });
 
