@@ -12,13 +12,12 @@
           Filters are usable in two places: mustache interpolations and v-bind expressions.
           Filters should be appended to the end of the JavaScript expression,
           denoted by the “pipe” symbol.We can implement filters as a,
-          <br/>
+        </p>
         <ol>
           <li>Local Filters</li>
           <li>Global Filters</li>
         </ol>
         <br/>
-        </p>
       </li>
       <li>
         <h3>Syntax :</h3>
