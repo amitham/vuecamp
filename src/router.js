@@ -1,5 +1,7 @@
 import Router from 'vue-router';
 import GettingStarted from './views/getting-started/Getting-Started';
+import Methods from './views/methods/Methods';
+import ComputedProperties from './views/computed-properties/Computed-Properties';
 import Directives from './views/directives/Directives';
 import Routing from './views/routing/Routing';
 import User from './components/features/routing/user/User';
@@ -7,11 +9,13 @@ import AllUsers from './components/features/routing/user/All-Users';
 import UserDetail from './components/features/routing/user/User-Detail';
 import UserEdit from './components/features/routing/user/User-Edit';
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     { path: '/', name: 'start', component: GettingStarted },
+    { path: '/methods', name: 'methods', component: Methods },
+    { path: '/computedProperties', name: 'computedProperties', component: ComputedProperties },
     { path: '/directive', name: 'directive', component: Directives },
     {
       path: '/routing',
@@ -39,3 +43,11 @@ export default new Router({
     }
   ]
 });
+
+// router watcher
+router.beforeEach((to, from, next) => {
+  console.log('this will execute all the time');
+  next(); // this is very important, if we didn't execute next() then routing will not continue
+});
+
+export default router;

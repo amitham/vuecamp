@@ -9,10 +9,16 @@
         <router-link to="/"><a-icon type="windows" theme="filled"/>Getting Started</router-link>
       </a-menu-item>
       <a-menu-item key="2">
-        <router-link to="/directive"><a-icon type="folder" />Directives</router-link>
+        <router-link to="/methods"><a-icon :type="icon" />Methods</router-link>
       </a-menu-item>
       <a-menu-item key="3">
-        <router-link to="/routing"><a-icon type="folder" />Routing</router-link>
+        <router-link to="/computedProperties"><a-icon :type="icon" />Computed Properties</router-link>
+      </a-menu-item>
+      <a-menu-item key="4">
+        <router-link to="/directive"><a-icon :type="icon" />Directives</router-link>
+      </a-menu-item>
+      <a-menu-item key="5">
+        <router-link to="/routing"><a-icon :type="icon" />Routing</router-link>
       </a-menu-item>
     </a-menu>
   </div>
@@ -23,6 +29,7 @@ export default {
   name: 'Navigation',
   data () {
     return {
+      icon: 'bulb',
       selectedItem: '1'
     };
   },
