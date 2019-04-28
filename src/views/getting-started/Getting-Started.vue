@@ -4,20 +4,26 @@
     <hr class="app-hr"/>
     <div class="mt-25">
       <ul class="logo-list">
-        <li><img :src="`${publicPath}images/vue.png`"/></li>
-        <li><img :src="`${publicPath}images/vuex.png`"/></li>
-        <li><img :src="`${publicPath}images/router.png`"/></li>
-        <li><img :src="`${publicPath}images/babel.png`"/></li>
-        <li><img :src="`${publicPath}images/eslint.svg`"/></li>
-      </ul>
-    </div>
-    <div>
-      <ul class="logo-list names-list">
-        <li>Vue</li>
-        <li>Vuex</li>
-        <li>Vue-Router</li>
-        <li>Babel</li>
-        <li>ESLint</li>
+        <li>
+          <div class="image-con"><img :src="`${publicPath}images/vue.png`"/></div>
+          <div class="title-con">Vue</div>
+        </li>
+        <li>
+          <div class="image-con"><img :src="`${publicPath}images/vuex.png`"/></div>
+          <div class="title-con">Vuex</div>
+        </li>
+        <li>
+          <div class="image-con"><img :src="`${publicPath}images/router.png`"/></div>
+          <div class="title-con">Vue-Router</div>
+        </li>
+        <li>
+          <div class="image-con"><img :src="`${publicPath}images/babel.png`"/></div>
+          <div class="title-con">Babel</div>
+        </li>
+        <li>
+          <div class="image-con"><img :src="`${publicPath}images/eslint.svg`"/></div>
+          <div class="title-con">ESLint</div>
+        </li>
       </ul>
     </div>
   </a-layout>
@@ -48,11 +54,20 @@ export default {
     text-align: center;
   }
 
-  .logo-list > li > img {
+  .logo-list > li > .image-con {
+    line-height: 185px;
+  }
+
+  .logo-list > li > .image-con,
+  .logo-list > li > .title-con {
+    width: 100%;
+  }
+
+  .logo-list > li > .image-con > img {
     width: 180px;
   }
 
-  .names-list > li {
+  .logo-list > li > .title-con {
     line-height: 60px;
     font-weight: bold;
   }
