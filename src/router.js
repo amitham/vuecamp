@@ -22,15 +22,17 @@ export default new Router({
           path: ':user',
           component: User,
           children: [
-            { path: '', component: AllUsers },
+            { path: '', name: 'users', component: AllUsers },
             { path: 'all',
+              name: 'allUsers',
               component: AllUsers,
               beforeEnter: (to, from, next) => {
                 console.log('this only execute when "user/all" routing execute');
                 next();
-              } },
-            { path: ':id/detail', component: UserDetail },
-            { path: ':id/edit', component: UserEdit }
+              }
+            },
+            { path: ':id/detail', name: 'userDetails', component: UserDetail },
+            { path: ':id/edit', name: 'userEdit', component: UserEdit }
           ]
         }
       ]
