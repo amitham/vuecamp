@@ -8,6 +8,7 @@ import User from './components/features/routing/user/User';
 import AllUsers from './components/features/routing/user/All-Users';
 import UserDetail from './components/features/routing/user/User-Detail';
 import UserEdit from './components/features/routing/user/User-Edit';
+import Filters from './views/filters/Filters';
 
 const router = new Router({
   mode: 'history',
@@ -40,7 +41,8 @@ const router = new Router({
           ]
         }
       ]
-    }
+    },
+    { path: '/filters', name: 'filters', component: Filters },
   ]
 });
 

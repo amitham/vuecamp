@@ -8,7 +8,7 @@ import './styles.css';
 import 'prismjs/themes/prism-okaidia.css';
 // plugin modules
 import 'prismjs';
-import { Button, Icon, Layout, Menu } from 'ant-design-vue';
+import { Button, Icon, Layout, Menu, Input } from 'ant-design-vue';
 // custom directives
 import './directives/highlight';
 
@@ -20,6 +20,7 @@ Vue.use(Layout);
 Vue.use(Menu);
 Vue.use(Icon);
 Vue.use(Button);
+Vue.use(Input);
 
 // Vue App Instance
 new Vue({
