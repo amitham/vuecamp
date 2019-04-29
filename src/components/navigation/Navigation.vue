@@ -23,6 +23,9 @@
       <a-menu-item key="6">
         <router-link to="/filters"><a-icon :type="icon" />Filters</router-link>
       </a-menu-item>
+      <a-menu-item key="7">
+        <router-link to="/vuex"><a-icon :type="icon" />Vuex</router-link>
+      </a-menu-item>
     </a-menu>
   </div>
 </template>
@@ -32,7 +35,7 @@ export default {
   name: 'Navigation',
   data () {
     return {
-      icon: 'bulb',
+      icon: 'fire',
       selectedItem: '1'
     };
   },
